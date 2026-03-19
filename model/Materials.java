@@ -1,9 +1,9 @@
 // Material/component of jewellery
 public class Material {
     private String name;          // gold, diamond
-    private String description;   // cut, colour, etc.
+    private String description;   // cut, colour
     private double quantity;      // weight
-    private double quality;       // karat, clarity, etc.
+    private double quality;       // karat, clarity 
 
     public Material(String name, String description, double quantity, double quality) {
         this.name = name;
