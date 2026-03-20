@@ -7,18 +7,16 @@ public class JewelleryItem {
     private String description;
     private String type;          // ring, watch, necklace
     private String targetGender;  // male, female
-    private String imageUrl;
-    private double retailPrice;
+    private double retailPrice; //price
 
 
     private final MaterialList materials = new MaterialList();
 
     public JewelleryItem(String description, String type, String targetGender,
-                         String imageUrl, double retailPrice) {
+                         double retailPrice) {
         this.description = description;
         this.type = type;
         this.targetGender = targetGender;
-        this.imageUrl = imageUrl;
         this.retailPrice = retailPrice;
     }
 
@@ -34,7 +32,7 @@ public class JewelleryItem {
         return retailPrice;
     }
 
-    // Getters/setters...
+    // Getters/setters
 
     public String getDescription() {
         return description;
@@ -48,9 +46,6 @@ public class JewelleryItem {
         return targetGender;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
-    }
 
     public void setDescription(String description) {
         this.description = description;
@@ -64,9 +59,6 @@ public class JewelleryItem {
         this.targetGender = targetGender;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
 
     public void setRetailPrice(double retailPrice) {
         this.retailPrice = retailPrice;

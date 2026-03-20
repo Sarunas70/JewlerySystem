@@ -21,26 +21,21 @@ public class JewelleryStoreManager {
         DisplayCase dc = findCaseById(caseId);
         if (dc == null) return null;
 
-        DisplayTray tray = new DisplayTray(trayId, inlayColor, widthCm, depthCm);
+        DisplayTray tray = new DisplayTray(trayId, widthCm, depthCm);
         dc.addTray(tray);
         return tray;
     }
 
     public JewelleryItem addItemToTray(String trayId, String description, String type,
-                                       String targetGender, String imageUrl, double price) {
+                                       String targetGender,double price) {
         DisplayTray tray = findTrayById(trayId);
         if (tray == null) return null;
 
-        JewelleryItem item = new JewelleryItem(description, type, targetGender, imageUrl, price);
+        JewelleryItem item = new JewelleryItem(description, type, targetGender, price);
         tray.addItem(item);
         return item;
     }
 
-    public void addMaterialToItem(JewelleryItem item, String name, String desc,
-                                  double qty, double quality) {
-        if (item == null) return;
-        item.addMaterial(new Material(name, desc, qty, quality));
-    }
 
     public DisplayCaseList getDisplayCases() {
         return displayCases;

@@ -4,7 +4,7 @@ import structure.DisplayTrayList;
 
 // Display case that holds trays
 public class DisplayCase {
-    private int caseId;       // unique identifier
+    private int caseId;       // unique id
     private String type;      // wall-mounted or freestanding
     private boolean lit;      // lit or unlit
 

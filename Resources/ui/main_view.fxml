@@ -1,19 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="ui.MainViewController">
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="ui.MainViewController">
 
-    <left>
-        <VBox spacing="5.0">
-            <ListView fx:id="casesListView" />
-            <Button fx:id="addCaseButton" text="Add Case"
-                    onAction="#onAddCaseClicked"/>
+    <!-- INPUTS -->
+    <top>
+        <VBox spacing="10">
+            <!-- Case inputs -->
+            <HBox spacing="5">
+                <Label text="Case type:"/>
+                <ComboBox fx:id="caseTypeCombo" promptText="Select..."/>
+                <CheckBox fx:id="caseLitCheck" text="Lit"/>
+                <Button text="Case" onAction="#onAddCaseClicked"/>
+            </HBox>
+
+            <!-- Tray input -->
+            <HBox spacing="5">
+                <Label text="Tray ID:"/>
+                <TextField fx:id="trayIdField" promptText="A1"/>
+                <Button text="Tray" onAction="#onAddTrayClicked"/>
+            </HBox>
+
+            <!-- Item inputs -->
+            <HBox spacing="5">
+                <Label text="Item:"/>
+                <TextField fx:id="itemDescField" promptText="Gold ring"/>
+                <TextField fx:id="itemPriceField" promptText="1500"/>
+                <ComboBox fx:id="itemGenderCombo" promptText="Gender"/>
+                <Button text="Item" onAction="#onAddItemClicked"/>
+            </HBox>
+
+            <!-- Actions -->
+            <HBox spacing="5">
+                <Button text="View All" onAction="#onViewAllClicked"/>
+                <Button text="Reset" onAction="#onResetClicked"/>
+            </HBox>
         </VBox>
-    </left>
+    </top>
+
+    <!-- LISTS -->
+    <center>
+        <HBox spacing="10">
+            <VBox>
+                <Label text="Cases"/>
+                <ListView fx:id="casesListView" prefHeight="250" prefWidth="100"/>
+            </VBox>
+            <VBox>
+                <Label text="Trays"/>
+                <ListView fx:id="traysListView" prefHeight="250" prefWidth="80"/>
+            </VBox>
+            <VBox>
+                <Label text="Items"/>
+                <ListView fx:id="itemsListView" prefHeight="250" prefWidth="100"/>
+            </VBox>
+        </HBox>
+    </center>
+
+    <!-- LOG -->
+    <right>
+        <VBox>
+            <Label text="Log"/>
+            <TextArea fx:id="logArea" prefWidth="300" editable="false"/>
+        </VBox>
+    </right>
+
 </BorderPane>
