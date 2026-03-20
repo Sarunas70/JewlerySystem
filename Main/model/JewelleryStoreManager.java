@@ -1,3 +1,5 @@
+package model;
+
 public class JewelleryStoreManager {
     private DisplayCaseList displayCases = new DisplayCaseList();
     private int nextCaseId = 1;

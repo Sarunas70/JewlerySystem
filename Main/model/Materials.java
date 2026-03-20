@@ -1,4 +1,6 @@
-// Material/component of jewellery
+package model;
+
+// model.Material/component of jewellery
 public class Material {
     private String name;          // gold, diamond
     private String description;   // cut, colour

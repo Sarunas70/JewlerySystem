@@ -1,31 +1,31 @@
-package Structure;
+package structure;
 
-public class JewelleryItemList {
-    private Node<JewelleryItem> head;
+public class DisplayTrayList {
+    private Node<DisplayTray> head;
     private int size;
 
-    public void add(JewelleryItem jewelleryItem) {
-        Node<JewelleryItem> newNode = new Node<>(jewelleryItem);
+    public void add(DisplayTray displayTray) {
+        Node<DisplayTray> newNode = new Node<>(displayTray);
         if (head == null) {
             head = newNode;
         } else {
-            Node<JewelleryItem> current = head;
+            Node<DisplayTray> current = head;
             while (current.next != null) {
                 current = current.next;
             }
             current.next = newNode;
         }
         size++;
-    }
 
-    public boolean remove(JewelleryItem target) {
+    }
+    public boolean remove(DisplayTray target) {
         if (head == null) return false;
         if (head.data == target) {
             head = head.next;
             size--;
             return true;
         }
-        Node<JewelleryItem> current = head;
+        Node<DisplayTray> current = head;
         while (current.next != null && current.next.data != target) {
             current = current.next;
         }
@@ -33,14 +33,18 @@ public class JewelleryItemList {
         current.next = current.next.next;
         size--;
         return true;
+
     }
 
     public int size() {
         return size;
     }
 
-    public Node<JewelleryItem> getHead() {
+    public Node<DisplayTray> getHead() {
         return head;
     }
+
+    public Node<DisplayTray> getHead() { return head; }
+    public int size() { return size; }
 
 }

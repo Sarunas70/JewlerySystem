@@ -1,15 +1,17 @@
-package Structure;
+package structure;
 
-public class DisplayCaseList {
-    private Node<DisplayCase> head;
+import model.JewelleryItem;
+
+public class JewelleryItemList {
+    private Node<JewelleryItem> head;
     private int size;
 
-    public void add(DisplayCase displayCase) {
-        Node<DisplayCase> newNode = new Node<>(displayCase);
+    public void add(JewelleryItem jewelleryItem) {
+        Node<JewelleryItem> newNode = new Node<>(jewelleryItem);
         if (head == null) {
             head = newNode;
         } else {
-            Node<DisplayCase> current = head;
+            Node<JewelleryItem> current = head;
             while (current.next != null) {
                 current = current.next;
             }
@@ -18,14 +20,14 @@ public class DisplayCaseList {
         size++;
     }
 
-    public boolean remove(DisplayCase target) {
+    public boolean remove(JewelleryItem target) {
         if (head == null) return false;
         if (head.data == target) {
             head = head.next;
             size--;
             return true;
         }
-        Node<DisplayCase> current = head;
+        Node<JewelleryItem> current = head;
         while (current.next != null && current.next.data != target) {
             current = current.next;
         }
@@ -39,7 +41,11 @@ public class DisplayCaseList {
         return size;
     }
 
-    public Node<DisplayCase> getHead() {
+    public Node<JewelleryItem> getHead() {
         return head;
     }
+
+    public Node<JewelleryItem> getHead() { return head; }
+    public int size() { return size; }
+
 }

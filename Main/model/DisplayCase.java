@@ -1,3 +1,5 @@
+package model;
+
 // Display case that holds trays
 public class DisplayCase {
     private int caseId;       // unique identifier
@@ -41,6 +43,11 @@ public class DisplayCase {
     public void setLit(boolean lit) {
         this.lit = lit;
     }
+
+    public int getCaseId() { return caseId; }
+    public String getType() { return type; }
+    public boolean isLit() { return lit; }
+    public DisplayTrayList getTrays() { return trays; }
 
     
 }

@@ -1,3 +1,5 @@
+package model;
+
 // Display tray that holds jewellery items
 public class DisplayTray {
     private String trayId;    
@@ -40,9 +42,7 @@ public class DisplayTray {
         return depthCm;
     }
 
-    public void setTrayId(String tray
-
-Id) {
+    public void setTrayId(String trayId) {
         this.trayId = trayId;
     }
 
@@ -56,6 +56,13 @@ Id) {
 
     public void setDepthCm(double depthCm) {
         this.depthCm = depthCm;
-    }
+    }#
+
+    public String getTrayId() { return trayId; }
+    public JewelleryItemList getItems() { return items; }
+
+
+
+
 
 }

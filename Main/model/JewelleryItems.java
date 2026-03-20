@@ -1,4 +1,4 @@
-
+package model;
 
 // A single jewellery item
 public class JewelleryItem {
@@ -71,6 +71,8 @@ public class JewelleryItem {
     }
 
 
+    public double getRetailPrice() { return retailPrice; }
+    public MaterialList getMaterials() { return materials; }
 
 
 }

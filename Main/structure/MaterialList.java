@@ -1,4 +1,4 @@
-package Structure;
+package structure;
 
 public class MaterialList {
     private Node<Material> head;
