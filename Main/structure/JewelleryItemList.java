@@ -3,8 +3,8 @@ package structure;
 import model.JewelleryItem;
 
 public class JewelleryItemList {
-    private Node<JewelleryItem> head;
-    private int size;
+    public Node<JewelleryItem> head;
+    public int size;
 
     public void add(JewelleryItem jewelleryItem) {
         Node<JewelleryItem> newNode = new Node<>(jewelleryItem);

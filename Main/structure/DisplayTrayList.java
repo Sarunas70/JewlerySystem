@@ -3,8 +3,8 @@ package structure;
 import model.DisplayTray;
 
 public class DisplayTrayList {
-    private Node<DisplayTray> head;
-    private int size;
+    public Node<DisplayTray> head;
+    public int size;
 
     public void add(DisplayTray displayTray) {
         Node<DisplayTray> newNode = new Node<>(displayTray);

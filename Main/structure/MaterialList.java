@@ -3,8 +3,8 @@ package structure;
 import model.Material;
 
 public class MaterialList {
-    private Node<Material> head;
-    private int size;
+    public Node<Material> head;
+    public int size;
 
     public void add(Material material) {
         Node<Material> newNode = new Node<>(material);

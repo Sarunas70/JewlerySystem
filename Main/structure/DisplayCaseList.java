@@ -3,8 +3,8 @@ package structure;
 import model.DisplayCase;
 
 public class DisplayCaseList {
-    private Node<DisplayCase> head;
-    private int size;
+    public Node<DisplayCase> head;
+    public int size;
 
     public void add(DisplayCase displayCase) {
         Node<DisplayCase> newNode = new Node<>(displayCase);

@@ -9,6 +9,9 @@ import model.JewelleryItem;
 import model.JewelleryStoreManager;
 import structure.Node;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
 import static java.rmi.server.LogStream.log;
 
 public class MainViewController {
@@ -65,7 +68,7 @@ public class MainViewController {
 
 
 
-    // ===== ADD CASE =====
+    // ADD CASE
     @FXML
     private void onAddCaseClicked() {
         String type = caseTypeCombo.getValue();
@@ -82,7 +85,7 @@ public class MainViewController {
         caseLitCheck.setSelected(false);
     }
 
-    // ===== ADD TRAY =====
+    // ADD TRAY
     @FXML
     private void onAddTrayClicked() {
         int caseId = casesListView.getSelectionModel().getSelectedIndex() + 1;
@@ -100,7 +103,7 @@ public class MainViewController {
         DisplayTray tray = storeManager.addDisplayTray(caseId, trayId, "red", 30, 20);
         if (tray != null) {
             showTraysForSelectedCase();
-            log("✅ Tray " + trayId + " added to case " + caseId);
+            log("Tray " + trayId + " added to case " + caseId);
             trayIdField.clear();
         } else {
             showAlert("Case not found or duplicate tray ID");
@@ -110,7 +113,7 @@ public class MainViewController {
     private void showAlert(String s) {
     }
 
-    // ===== ADD ITEM =====
+    // ADD ITEM
     @FXML
     private void onAddItemClicked() {
         // Check tray selected
@@ -171,7 +174,7 @@ public class MainViewController {
 
 
 
-    // ===== VIEW ALL =====
+    // VIEW ALL
     @FXML
     private void onViewAllClicked() {
         StringBuilder sb = new StringBuilder("=== STOCK REPORT ===\n");
@@ -186,7 +189,7 @@ public class MainViewController {
         logArea.setText(sb.toString());
     }
 
-    // ===== RESET =====
+    //  RESET
     @FXML
     private void onResetClicked() {
         storeManager.reset();
@@ -195,7 +198,7 @@ public class MainViewController {
         log("Store reset");
     }
 
-    // ===== HELPERS =====
+    // HELPERS
     private void refreshCasesList() {
         casesListView.getItems().clear();
         Node<DisplayCase> node = storeManager.getDisplayCases().getHead();
@@ -257,6 +260,76 @@ public class MainViewController {
 
 
     }
+    @FXML private TextField materialNameField;
+
+    @FXML
+    private void onAddMaterialClicked() {
+        log("Material '" + materialNameField.getText() + "' added");
+        materialNameField.clear();
+    }
+
+    // REMOVE ITEM (simplified - removes from selected tray)
+    @FXML
+    private void onRemoveItemClicked() {
+        int trayIndex = traysListView.getSelectionModel().getSelectedIndex();
+        if (trayIndex < 0) {
+            showAlert("Select a tray first");
+            return;
+        }
+        String trayId = traysListView.getItems().get(trayIndex);
+        // Remove first item from tray (for demo)
+        storeManager.removeItemFromTray(trayId, 0);  // index 0
+        log("Item removed from tray " + trayId);
+    }
+
+    // REMOVE TRAY
+    @FXML
+    private void onRemoveTrayClicked() {
+        int caseIndex = casesListView.getSelectionModel().getSelectedIndex();
+        int trayIndex = traysListView.getSelectionModel().getSelectedIndex();
+
+        if (caseIndex < 0 || trayIndex < 0) {
+            showAlert("Select tray to remove (click case → click tray)");
+            return;
+        }
+
+        int caseId = caseIndex + 1;
+        String trayId = traysListView.getItems().get(trayIndex);
+
+        if (storeManager.removeTray(caseId, trayId)) {
+            showTraysForSelectedCase();
+            log("🗑️ Tray '" + trayId + "' removed");
+        } else {
+            showAlert("Remove failed");
+        }
+    }
+
+    // REMOVE CASE
+    @FXML
+    private void onRemoveCaseClicked() {
+        int caseIndex = casesListView.getSelectionModel().getSelectedIndex();
+        if (caseIndex < 0) {
+            showAlert("Click a case to remove");
+            return;
+        }
+
+        int caseId = caseIndex + 1;
+        if (storeManager.removeCase(caseId)) {
+            refreshCasesList();
+            log("🗑️ Case " + caseId + " removed");
+        } else {
+            showAlert("Remove failed");
+        }
+    }
+
+
+
+    private void log(String message) {
+        logArea.appendText(message + "\n");
+        logArea.setScrollTop(Double.MAX_VALUE);  // Auto-scroll to bottom [web:95][web:98]
+    }
+
+
 
 
 }
