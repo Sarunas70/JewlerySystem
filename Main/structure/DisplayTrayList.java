@@ -18,8 +18,8 @@ public class DisplayTrayList {
             current.next = newNode;
         }
         size++;
-
     }
+
     public boolean remove(DisplayTray target) {
         if (head == null) return false;
         if (head.data == target) {
@@ -35,7 +35,6 @@ public class DisplayTrayList {
         current.next = current.next.next;
         size--;
         return true;
-
     }
 
     public int size() {
@@ -45,8 +44,4 @@ public class DisplayTrayList {
     public Node<DisplayTray> getHead() {
         return head;
     }
-
-    public Node<DisplayTray> getHead() { return head; }
-    public int size() { return size; }
-
 }

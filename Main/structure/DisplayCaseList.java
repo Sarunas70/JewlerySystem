@@ -1,5 +1,7 @@
 package structure;
 
+import model.DisplayCase;
+
 public class DisplayCaseList {
     private Node<DisplayCase> head;
     private int size;
@@ -42,7 +44,4 @@ public class DisplayCaseList {
     public Node<DisplayCase> getHead() {
         return head;
     }
-    public Node<DisplayCase> getHead() { return head; }
-    public int size() { return size; }
-
 }

@@ -1,9 +1,10 @@
 package structure;
-class Node<T> {
-    T data;
-    Node<T> next;
 
-    Node(T data) {
+public class Node<T> {
+    public T data;
+    public Node<T> next;
+
+    public Node(T data) {
         this.data = data;
     }
 }

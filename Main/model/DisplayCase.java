@@ -24,8 +24,6 @@ public class DisplayCase {
         return trays;
     }
 
-    // Getters/setters...
-
     public int getCaseId() {
         return caseId;
     }
@@ -45,12 +43,5 @@ public class DisplayCase {
     public void setLit(boolean lit) {
         this.lit = lit;
     }
-
-    public int getCaseId() { return caseId; }
-    public String getType() { return type; }
-    public boolean isLit() { return lit; }
-    public DisplayTrayList getTrays() { return trays; }
-
-    
 }
 

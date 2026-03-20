@@ -3,7 +3,6 @@ package model;
 import structure.DisplayCaseList;
 import structure.Node;
 
-
 public class JewelleryStoreManager {
     private DisplayCaseList displayCases = new DisplayCaseList();
     private int nextCaseId = 1;
@@ -17,11 +16,11 @@ public class JewelleryStoreManager {
     public DisplayTray addDisplayTray(int caseId, String trayId,
                                       String inlayColor, double widthCm, double depthCm) {
         if (findTrayById(trayId) != null) {
-            // identifier must be unique – handle error however you like
             return null;
         }
         DisplayCase dc = findCaseById(caseId);
         if (dc == null) return null;
+
         DisplayTray tray = new DisplayTray(trayId, inlayColor, widthCm, depthCm);
         dc.addTray(tray);
         return tray;
@@ -31,6 +30,7 @@ public class JewelleryStoreManager {
                                        String targetGender, String imageUrl, double price) {
         DisplayTray tray = findTrayById(trayId);
         if (tray == null) return null;
+
         JewelleryItem item = new JewelleryItem(description, type, targetGender, imageUrl, price);
         tray.addItem(item);
         return item;
@@ -38,14 +38,13 @@ public class JewelleryStoreManager {
 
     public void addMaterialToItem(JewelleryItem item, String name, String desc,
                                   double qty, double quality) {
+        if (item == null) return;
         item.addMaterial(new Material(name, desc, qty, quality));
     }
 
     public DisplayCaseList getDisplayCases() {
         return displayCases;
     }
-
-    // ===== Search helpers =====
 
     public DisplayCase findCaseById(int id) {
         Node<DisplayCase> current = displayCases.getHead();
@@ -74,8 +73,6 @@ public class JewelleryStoreManager {
         return null;
     }
 
-    // ===== View all stock & valuation =====
-
     public double calculateTotalStockValue() {
         double total = 0.0;
         Node<DisplayCase> caseNode = displayCases.getHead();
@@ -98,6 +95,4 @@ public class JewelleryStoreManager {
         displayCases = new DisplayCaseList();
         nextCaseId = 1;
     }
-
-
 }

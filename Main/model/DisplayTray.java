@@ -4,7 +4,7 @@ import structure.JewelleryItemList;
 
 // Display tray that holds jewellery items
 public class DisplayTray {
-    private String trayId;    
+    private String trayId;
     private String inlayColor;
     private double widthCm;
     private double depthCm;
@@ -25,8 +25,6 @@ public class DisplayTray {
     public JewelleryItemList getItems() {
         return items;
     }
-
-    // Getters/setters...
 
     public String getTrayId() {
         return trayId;
@@ -59,12 +57,4 @@ public class DisplayTray {
     public void setDepthCm(double depthCm) {
         this.depthCm = depthCm;
     }
-
-    public String getTrayId() { return trayId; }
-    public JewelleryItemList getItems() { return items; }
-
-
-
-
-
 }

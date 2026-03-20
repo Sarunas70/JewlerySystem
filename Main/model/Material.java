@@ -1,11 +1,10 @@
 package model;
 
-// model.Material/component of jewellery
 public class Material {
-    private String name;          // gold, diamond
-    private String description;   // cut, colour
-    private double quantity;      // weight
-    private double quality;       // karat, clarity 
+    private String name;
+    private String description;
+    private double quantity;
+    private double quality;
 
     public Material(String name, String description, double quantity, double quality) {
         this.name = name;
@@ -14,7 +13,6 @@ public class Material {
         this.quality = quality;
     }
 
-    // Getters/setters...
     public String getName() {
         return name;
     }
@@ -46,5 +44,4 @@ public class Material {
     public void setQuality(double quality) {
         this.quality = quality;
     }
-
 }

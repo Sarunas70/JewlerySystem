@@ -2,7 +2,7 @@ package model;
 
 import structure.MaterialList;
 
-// A single jewellery item
+
 public class JewelleryItem {
     private String description;
     private String type;          // ring, watch, necklace
@@ -10,8 +10,8 @@ public class JewelleryItem {
     private String imageUrl;
     private double retailPrice;
 
-    // Custom list of materials
-    private MaterialList materials = new MaterialList();
+
+    private final MaterialList materials = new MaterialList();
 
     public JewelleryItem(String description, String type, String targetGender,
                          String imageUrl, double retailPrice) {
@@ -71,11 +71,5 @@ public class JewelleryItem {
     public void setRetailPrice(double retailPrice) {
         this.retailPrice = retailPrice;
     }
-
-
-    public double getRetailPrice() { return retailPrice; }
-    public MaterialList getMaterials() { return materials; }
-
-
 }
 

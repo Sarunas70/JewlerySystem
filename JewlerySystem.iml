@@ -6,7 +6,8 @@
       <sourceFolder url="file://$MODULE_DIR$/Main" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Resources" type="java-resource" />
     </content>
-    <orderEntry type="jdk" jdkName="corretto-23" jdkType="JavaSDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="lib" level="project" />
   </component>
 </module>

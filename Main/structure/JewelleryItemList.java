@@ -44,8 +44,4 @@ public class JewelleryItemList {
     public Node<JewelleryItem> getHead() {
         return head;
     }
-
-    public Node<JewelleryItem> getHead() { return head; }
-    public int size() { return size; }
-
 }

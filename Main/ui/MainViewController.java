@@ -1,6 +1,5 @@
 package ui;
 
-
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
@@ -10,7 +9,7 @@ import structure.Node;
 
 public class MainViewController {
 
-    private JewelleryStoreManager storeManager = JewelleryStoreApp.getStoreManager();
+    private final JewelleryStoreManager storeManager = JewelleryStoreApp.getStoreManager();
 
     @FXML
     private ListView<String> casesListView;
@@ -25,13 +24,17 @@ public class MainViewController {
 
     @FXML
     private void onAddCaseClicked() {
-        // TODO: show dialog to enter type & lit, then:
-        // storeManager.addDisplayCase("wall-mounted", true);
+        storeManager.addDisplayCase("wall-mounted", true);
         refreshCasesList();
     }
 
     private void refreshCasesList() {
         casesListView.getItems().clear();
+
+        if (storeManager.getDisplayCases() == null) {
+            return;
+        }
+
         Node<DisplayCase> node = storeManager.getDisplayCases().getHead();
         while (node != null) {
             DisplayCase dc = node.data;
