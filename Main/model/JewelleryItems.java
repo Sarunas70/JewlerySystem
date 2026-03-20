@@ -1,5 +1,7 @@
 package model;
 
+import structure.MaterialList;
+
 // A single jewellery item
 public class JewelleryItem {
     private String description;

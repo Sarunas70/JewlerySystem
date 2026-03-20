@@ -1,5 +1,7 @@
 package structure;
 
+import model.DisplayTray;
+
 public class DisplayTrayList {
     private Node<DisplayTray> head;
     private int size;

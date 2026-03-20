@@ -4,6 +4,9 @@ package ui;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import model.DisplayCase;
+import model.JewelleryStoreManager;
+import structure.Node;
 
 public class MainViewController {
 

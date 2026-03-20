@@ -1,5 +1,7 @@
 package model;
 
+import structure.DisplayTrayList;
+
 // Display case that holds trays
 public class DisplayCase {
     private int caseId;       // unique identifier

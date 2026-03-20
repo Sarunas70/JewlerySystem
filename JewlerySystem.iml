@@ -6,8 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Main" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Resources" type="java-resource" />
     </content>
-    <orderEntry type="jdk" jdkName="openjdk-26" jdkType="JavaSDK" />
+    <orderEntry type="jdk" jdkName="corretto-23" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="openjfx-26_windows-x64_bin-sdk" level="project" />
   </component>
 </module>

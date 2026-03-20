@@ -1,5 +1,7 @@
 package model;
 
+import structure.JewelleryItemList;
+
 // Display tray that holds jewellery items
 public class DisplayTray {
     private String trayId;    
@@ -56,7 +58,7 @@ public class DisplayTray {
 
     public void setDepthCm(double depthCm) {
         this.depthCm = depthCm;
-    }#
+    }
 
     public String getTrayId() { return trayId; }
     public JewelleryItemList getItems() { return items; }
